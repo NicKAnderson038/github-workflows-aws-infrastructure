@@ -11,6 +11,9 @@ on:
 
 jobs:
   deploy_lambda_stack:
+    # permissions:
+    #   id-token: write
+    #   contents: read
     runs-on: ubuntu-latest
     steps:
       - name: Checkout this repo
@@ -23,10 +26,10 @@ jobs:
           aws-region: ${{ vars.AWS_TARGET_REGION }}
           role-session-name: "GitHubActions-DeployLayerStack"
 
-      - name: Deploy LambdaStack (via CDK)
-        uses: youyo/aws-cdk-github-actions@v2
-        with:
-          cdk_subcommand: 'deploy'
-          cdk_stack: 'LambdaStack'
-          cdk_args: '--require-approval never' # This is a toy example, so we don't need to approve changes
-          actions_comment: false
+      # - name: Deploy LambdaStack (via CDK)
+      #   uses: youyo/aws-cdk-github-actions@v2
+      #   with:
+      #     cdk_subcommand: 'deploy'
+      #     cdk_stack: 'LambdaStack'
+      #     cdk_args: '--require-approval never' # This is a toy example, so we don't need to approve changes
+      #     actions_comment: false
