@@ -10,6 +10,14 @@ Please see the [Medium story](https://medium.com/@mylesloffler/using-github-acti
 
 <br/>
 
+## Getting Started
+
+Clone repo and perform an `npm install`
+
+<sub>*Make sure git & node is installed to your system prior.</sub>
+
+<br/>
+
 ## Establishing Trust Between Github & AWS
 
 If you have a `default` AWS profile configured and want to deploy to that account and region, you can omit `AWS_PROFILE=<your-profile>`
@@ -30,7 +38,9 @@ This will Create the trust relationship with aws. And return the `TrustStackGitH
 | AWS_GITHUB_ACTIONS_ROLE  | `<TrustStackGitHubActionsRoleArn>`    |
 | AWS_TARGET_REGION | `us-east-1`     |
 
-After that, begin adding the additional infrastructure resources that need to be deployed with in `./bin/example.ts`. The example in this repo would be the `LambdaStack` in `./lib/LambdaStack.ts` and push to github `main` branch.
+After that, begin adding the additional infrastructure resources that need to be deployed with in `./bin/example.ts`. The example in this repo would be the `LambdaStack` in `./lib/LambdaStack.ts` and push to github `main` branch. Update `./github/workflows/*.yml` prior to pushing commit to the `main` branch.
+
+Another option is to use newly created `<TrustStackGitHubActionsRoleArn>` for deploying webapp or services to currently running aws instances. This would require updating the `./github/workflows/*.yml` for deploying applications.
 
 <br/>
 

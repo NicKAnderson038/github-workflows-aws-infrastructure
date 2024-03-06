@@ -10,6 +10,14 @@
     "test": "jest",
     "cdk": "cdk"
   },
+  "engines": {
+    "node": "16.18.0"
+  },
+  "keywords": [
+    "AWS CDK",
+    "Github",
+    "Actions"
+  ],
   "devDependencies": {
     "@types/jest": "^29.4.0",
     "@types/node": "18.14.6",

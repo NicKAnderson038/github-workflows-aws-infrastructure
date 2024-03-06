@@ -23,6 +23,7 @@ jobs:
           aws-region: ${{ vars.AWS_TARGET_REGION }}
           role-session-name: "GitHubActions-DeployLayerStack"
 
+      ## Deploying the LambdaStack via CDK is a toy example, so we don't need to do it here
       # - name: Deploy LambdaStack (via CDK)
       #   uses: youyo/aws-cdk-github-actions@v2
       #   with:
@@ -30,3 +31,23 @@ jobs:
       #     cdk_stack: 'LambdaStack'
       #     cdk_args: '--require-approval never' # This is a toy example, so we don't need to approve changes
       #     actions_comment: false
+
+      ## Deploying the Astro application to S3 and CloudFront
+      # - name: Read node and npm versions from package.json
+      #   uses: skjnldsv/read-package-engines-version-actions@v2
+      #   id: package-engines-versions
+      # - name: Show node version number
+      #   run: echo "Node version is ${{ steps.package-engines-versions.outputs.nodeVersion }}"
+      # - name: Use Node.js ${{ steps.package-engines-versions.outputs.nodeVersion }}
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: ${{ steps.package-engines-versions.outputs.nodeVersion }}
+      #     cache: 'npm'
+      # - name: Install Node modules
+      #   run: npm ci
+      # - name: Build Astro application
+      #   run: npm run build
+      # - name: Deploy to S3
+      #   run: aws s3 sync --delete ./dist/ s3://${{ secrets.BUCKET_ID }}
+      # - name: Create CloudFront invalidation
+      #   run: aws cloudfront create-invalidation --distribution-id ${{ secrets.DISTRIBUTION_ID }} --paths "/*"
