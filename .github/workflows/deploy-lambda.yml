@@ -16,6 +16,13 @@ jobs:
       - name: Checkout this repo
         uses: actions/checkout@v3
 
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: ${{ vars.AWS_GITHUB_ACTIONS_ROLE }}
+          aws-region: ${{ vars.AWS_TARGET_REGION }}
+          role-session-name: "GitHubActions-DeployLayerStack"
+
       - name: Read node the version from package.json
         uses: skjnldsv/read-package-engines-version-actions@v2
         id: package-engines-versions
@@ -26,24 +33,6 @@ jobs:
         with:
           node-version: ${{ steps.package-engines-versions.outputs.nodeVersion }}
           cache: 'npm'
-
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          role-to-assume: ${{ vars.AWS_GITHUB_ACTIONS_ROLE }}
-          aws-region: ${{ vars.AWS_TARGET_REGION }}
-          role-session-name: "GitHubActions-DeployLayerStack"
-
-      # - name: Read node the version from package.json
-      #   uses: skjnldsv/read-package-engines-version-actions@v2
-      #   id: package-engines-versions
-      # - name: Show node version number
-      #   run: echo "Node version is ${{ steps.package-engines-versions.outputs.nodeVersion }}"
-      # - name: Use Node.js ${{ steps.package-engines-versions.outputs.nodeVersion }}
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version: ${{ steps.package-engines-versions.outputs.nodeVersion }}
-      #     cache: 'npm'
 
       ## Deploying the LambdaStack via CDK is a toy example, so we don't need to do it here
       # - name: Deploy LambdaStack (via CDK)
