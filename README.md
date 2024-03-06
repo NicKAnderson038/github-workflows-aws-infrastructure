@@ -30,7 +30,7 @@ This will Create the trust relationship with aws. And return the `TrustStackGitH
 | AWS_GITHUB_ACTIONS_ROLE  | `<TrustStackGitHubActionsRoleArn>`    |
 | AWS_TARGET_REGION | `us-east-1`     |
 
-After that, begin adding the additional infrastructure resources that need to be deployed witin `./bin/example.ts`. The example in this repo would be the `LambdaStack` in `./lib/LambdaStack.ts` and push to github `main` branch.
+After that, begin adding the additional infrastructure resources that need to be deployed with in `./bin/example.ts`. The example in this repo would be the `LambdaStack` in `./lib/LambdaStack.ts` and push to github `main` branch.
 
 <br/>
 
