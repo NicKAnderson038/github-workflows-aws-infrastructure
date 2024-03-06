@@ -29,7 +29,7 @@ npx cdk deploy TrustStack --parameters GitHubOrg=NicKAnderson038 --parameters Gi
 ```
 <br/>
 
-## Managing Infrastructure with commits
+## Managing Infrastructure or Apps via Git Commits
 
 This will Create the trust relationship with aws. And return the `TrustStackGitHubActionsRoleArn` needed for the repository variables in the github repo.
 
