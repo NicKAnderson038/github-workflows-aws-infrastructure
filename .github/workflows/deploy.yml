@@ -10,7 +10,7 @@ on:
       - main
 
 jobs:
-  deploy_lambda_stack:
+  deploy_lambda_stack_or_app:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout this repo
