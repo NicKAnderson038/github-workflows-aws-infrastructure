@@ -11,9 +11,6 @@ on:
 
 jobs:
   deploy_lambda_stack:
-    # permissions:
-    #   id-token: write
-    #   contents: read
     runs-on: ubuntu-latest
     steps:
       - name: Checkout this repo
