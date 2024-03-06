@@ -8,6 +8,8 @@ The project structure is reflective of `cdk init app --languge=typescript` and d
 
 Please see [my Medium story](https://medium.com/@mylesloffler/using-github-actions-to-deploy-a-cdk-application-f28b7f792f12#a16e) as a guide for using the contents of this repository.
 
+<br/>
+
 ## Establishing Trust Between Github & AWS
 
 If you have a `default` AWS profile configured and want to deploy to that account and region, you can omit `AWS_PROFILE=<your-profile>`
@@ -17,6 +19,8 @@ If you have a `default` AWS profile configured and want to deploy to that accoun
 
 npx cdk deploy TrustStack --parameters GitHubOrg=NicKAnderson038 --parameters GitHubRepo=github-workflows-aws-infrastructure
 ```
+<br/>
+
 ## Managing Infrastructure with commits
 
 This will Create the trust relationship with aws. And return the `TrustStackGitHubActionsRoleArn` needed for the repository variables in the github repo.
