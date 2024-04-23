@@ -25,7 +25,7 @@ If you have a `default` AWS profile configured and want to deploy to that accoun
 ```bash
 # AWS_PROFILE=<your-profile> npx cdk deploy TrustStack --parameters GitHubOrg=<your-org> --parameters GitHubRepo=<your-repo>
 
-npx cdk deploy TrustStack --parameters GitHubOrg=NicKAnderson038 --parameters GitHubRepo=github-workflows-aws-infrastructure
+npx cdk deploy TrustStack --parameters GitHubOrg=NicKAnderson038 --parameters GitHubRepo=MY_GH_REPO
 ```
 <br/>
 
