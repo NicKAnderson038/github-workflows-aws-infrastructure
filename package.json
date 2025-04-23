@@ -9,8 +9,8 @@
         "watch": "tsc -w",
         "test": "jest",
         "cdk": "cdk",
-        "packages-check": "npx npm-check-updates",
-        "packages-update": "npx npm-check-updates -i --format group"
+        "packages:check": "npx npm-check-updates",
+        "packages:update": "npx npm-check-updates -i --format group"
     },
     "engines": {
         "node": "22.14.0"
